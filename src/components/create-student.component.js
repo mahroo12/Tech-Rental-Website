@@ -77,7 +77,7 @@ export default class CreateStudent extends Component {
       studentid: this.state.studentid,
       studentemail: this.state.studentemail,
       major: this.state.major,
-      startdate: this.state.startdate,
+      startdate: this.props.location.params,//this.state.startdate,
       enddate: this.state.enddate
     }
 
@@ -143,14 +143,10 @@ export default class CreateStudent extends Component {
                   onChange={this.onChangemajor}
                   />
               </div>
-
               <div className="form-group"> 
                 <label style={{paddingLeft: '30px', color:'#00000060'}}>Start Date: </label>
                 <div style={{paddingLeft: '30px', marginTop: '10px', marginBottom: '10px'}}>
-                  <input style={{ marginLeft: '30px' , marginTop: '10px', marginBottom: '10px', width: '200px'}} type = "date" 
-                  
-                  value= {this.state.startdate}
-                  onChange= {this.onChangeStartdate}/>
+                <input value={this.props.location.params}/>
                 </div>
               </div>
 

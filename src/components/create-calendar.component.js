@@ -11,7 +11,7 @@ export default class CreateCalendar extends Component {
     super();
     this.state = {
       show: false,
-      theDate: "hi",
+      theDate: null,
       weekendsVisible: true,
       currentEvents: []
     };
