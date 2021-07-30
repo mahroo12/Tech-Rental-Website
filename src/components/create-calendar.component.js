@@ -12,6 +12,7 @@ export default class CreateCalendar extends Component {
     this.state = {
       show: false,
       theDate: null,
+      theEndDate: null,
       weekendsVisible: true,
       currentEvents: []
     };
@@ -24,7 +25,8 @@ export default class CreateCalendar extends Component {
     this.setState({ show: false });
   };
   getTheDate = (selectInfo) =>{
-    this.setState({theDate: selectInfo.startStr});
+    this.setState({theDate: selectInfo.startStr, 
+    theEndDate: selectInfo.endStr});
   };
 
   render() {

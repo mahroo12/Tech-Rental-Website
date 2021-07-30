@@ -78,7 +78,7 @@ export default class CreateStudent extends Component {
       studentemail: this.state.studentemail,
       major: this.state.major,
       startdate: this.props.location.params,//this.state.startdate,
-      enddate: this.state.enddate
+      enddate: this.props.location.param2//this.state.enddate
     }
 
 
@@ -153,10 +153,8 @@ export default class CreateStudent extends Component {
               <div className="form-group"> 
                 <label style={{paddingLeft: '30px', color:'#00000060'}}>End Date: </label>
                 <div style={{paddingLeft: '30px', marginTop: '10px', marginBottom: '10px'}}>
-                  <DatePicker
-                  selected={this.state.enddate}
-                  onChange={this.onChangeEnddate}
-                  />
+                <input value={this.props.location.param2}/>
+                  
                 </div>
               </div>
             
