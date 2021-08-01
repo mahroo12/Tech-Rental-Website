@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DatePicker from 'react-datepicker';
+
 import "react-datepicker/dist/react-datepicker.css";
 
 import axios from 'axios';
@@ -19,21 +19,45 @@ export default class CreateStudent extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      studentname: '',
+      title: '',
       studentid: '',
       studentemail: '',
       major: '',
-      startdate: null,
-      enddate: null,
+      start: null,
+      end: null,
+      arr: [],
       
 
 
     }
   }
 
+  /*
+  componentDidMount() {
+   // axios.get('http://localhost:5000/students/')
+    //  .then(response =>  this.setState({...this.state, arr: response.data}));
+
+      //const obj = {'title' : 'hello', 'major' : 'smth'};
+      //const obj2 = {'title' : 'hi', 'major' : 'another'};
+      //this.state.arr.push(obj);
+      //console.log(this.state.arr);
+      //this.state.arr.push(obj2);
+      //console.log(this.state.arr);
+      
+     // this.setState({
+       // arr: this.state.arr.concat({'title' : 'a', 'major' : 'm'})
+      //});
+
+     // console.log(this.state.arr);
+
+     axios.get('http://localhost:5000/students/')
+       .then(response =>  response.data.map((obj) => this.state.arr.push({'title' : obj.studentname, 'major': obj.major})));
+       console.log(this.state.arr);
+    }*/
+
   onChangeStudentname(e) {
     this.setState({
-      studentname: e.target.value
+      title: e.target.value
     });
   }
   
@@ -58,36 +82,48 @@ export default class CreateStudent extends Component {
     
     onChangeStartdate(date) {
         this.setState({
-            startdate: date
+            start: date
                 });
      } 
     
     onChangeEnddate(date) {
         this.setState({
-            enddate: date
+            end: date
                 });
      }            
+
 
   onSubmit(e) {
     e.preventDefault();
   
 
     const student = {
-      studentname: this.state.studentname,
+      title: this.state.title,
       studentid: this.state.studentid,
       studentemail: this.state.studentemail,
       major: this.state.major,
-      startdate: this.props.location.params,//this.state.startdate,
-      enddate: this.props.location.param2//this.state.enddate
+      start: this.props.location.params,//this.state.startdate,
+      end: this.props.location.param2//this.state.enddate
     }
 
 
     console.log(student);
+    
+
 
     axios.post('http://localhost:5000/students/add', student)
       .then(res => console.log(res.data));
+    
+      
 
-      window.location = '/';
+      //console.log("the arr is:");
+      //console.log(this.state.arr);
+              
+   
+
+      
+
+              //window.location = '/';
 
   }
 
@@ -108,7 +144,7 @@ export default class CreateStudent extends Component {
                 <input   style={{ marginLeft: '30px' , marginTop: '10px', marginBottom: '10px', width: '200px'}} type="text"
                   required
                   className="form-control"
-                  value={this.state.studentname}
+                  value={this.state.title}
                   onChange={this.onChangeStudentname}
                   />
               </div>

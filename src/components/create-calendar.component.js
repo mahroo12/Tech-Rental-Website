@@ -1,5 +1,7 @@
 //import React from "react";
 import React, {Component} from 'react';
+import axios from 'axios';
+import moment from "moment";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -14,13 +16,23 @@ export default class CreateCalendar extends Component {
       theDate: null,
       theEndDate: null,
       weekendsVisible: true,
-      currentEvents: []
+      currentEvents: [],
+      arr: []
     };
     //this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
-  }
-  
 
+  }
+ 
+  componentDidMount() {
+      axios.get('http://localhost:5000/students/')
+        .then(response =>  this.setState({currentEvents: response.data}));
+
+        console.log(this.state.currentEvents);
+        
+        
+        
+  }
   hideModal = () => {
     this.setState({ show: false });
   };
@@ -31,24 +43,34 @@ export default class CreateCalendar extends Component {
 
   render() {
     return (
+      
         <div style={{backgroundColor: 	'#FFFFFF'}}>
       <div className="demo-app">
         <div className="demo-app-main">
-          <FullCalendar
+         {console.log('the value is')}
+         {console.log(this.state.currentEvents)} 
+         
+         
+         <FullCalendar
+          
             plugins={[dayGridPlugin, interactionPlugin]}
             headerToolbar={{
               left: "prev,next today",
               center: "title",
               right: "dayGridMonth"
             }}
+            
             initialView="dayGridMonth"
             editable={false}
             selectable={true}
             selectOverlap={false}
+            events={this.state.currentEvents}
             eventDurationEditable={false}
             weekends={this.state.weekendsVisible}
             select=  {this.anotherf}//{this.handleDateSelect()}
+            
           />
+          
            {this.state.show && <CalendarModal data={this.state}/>}
           
         </div>

@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const studentSchema = new Schema(
     {
-    studentname:{type:String, required: true, trim:true, minlength: 3},
+    title:{type:String, required: true, trim:true, minlength: 3},
     studentid: {type:Number, required: true},
     studentemail:{type:String, required: true},
     major:{type:String, required: false},
-    startdate:{type:Date, required: true},
-    enddate:{type:Date, required: true},
+    start:{type:Date, required: true},
+    end:{type:Date, required: true},
     },
     
     {

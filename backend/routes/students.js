@@ -10,20 +10,20 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const studentname = req.body.studentname;
+    const title = req.body.title;
     const studentid = Number(req.body.studentid);
     const studentemail = req.body.studentemail;
     const major = req.body.major;
-    const startdate= Date.parse(req.body.startdate);
-    const enddate= Date.parse(req.body.enddate);
+    const start= Date.parse(req.body.start);
+    const end= Date.parse(req.body.end);
 
     const newStudent = new Student({
-        studentname,
+        title,
         studentid,
         studentemail,
         major,
-        startdate,
-        enddate,
+        start,
+        end,
     });
 //objects
     let transporter = nodemailer.createTransport({
