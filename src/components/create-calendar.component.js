@@ -65,6 +65,7 @@ export default class CreateCalendar extends Component {
             selectable={true}
             selectOverlap={false}
             events={this.state.currentEvents}
+            selectConstraint={{start: '2021-08-02'}}
             eventDurationEditable={false}
             weekends={this.state.weekendsVisible}
             select=  {this.anotherf}//{this.handleDateSelect()}
@@ -90,7 +91,7 @@ export default class CreateCalendar extends Component {
     //preventDefault();
     this.helperfunction(selectInfo);
     this.getTheDate (selectInfo);
-    this.handleDateSelect(selectInfo);
+   // this.handleDateSelect(selectInfo);
     this.showModal();
     
   //  this.moveToAnotherPage();
@@ -102,6 +103,9 @@ export default class CreateCalendar extends Component {
   };
   helperfunction = (selectInfo) =>{
     alert("selected date is from" + selectInfo.startStr + "to" + selectInfo.endStr);
+    let calendarApi = selectInfo.view.calendar;
+    //let history = useHistory();
+    calendarApi.unselect(); 
   };
 
   moveToAnotherPage=()=>{
