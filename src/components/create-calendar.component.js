@@ -44,39 +44,40 @@ export default class CreateCalendar extends Component {
   render() {
     return (
       
-        <div style={{backgroundColor: 	'#FFFFFF'}}>
-      <div className="demo-app">
-        <div className="demo-app-main">
-         {console.log('the value is')}
-         {console.log(this.state.currentEvents)} 
+        <section style={{ backgroundColor: 	'#FFFFFF'}}>
+          <div className="cl" style={{padding: '20px', position: 'relative', zIndex: 0}}>
+            {/*<div className="demo-app-main">*/}
+              {console.log('the value is')}
+              {console.log(this.state.currentEvents)} 
          
          
-         <FullCalendar
+              <FullCalendar
           
-            plugins={[dayGridPlugin, interactionPlugin]}
-            headerToolbar={{
-              left: "prev,next today",
-              center: "title",
-              right: "dayGridMonth"
-            }}
+                plugins={[dayGridPlugin, interactionPlugin]}
+                headerToolbar={{
+                left: "prev,next today",
+                center: "title",
+                right: "dayGridMonth"
+                }}
             
-            initialView="dayGridMonth"
-            editable={false}
-            selectable={true}
-            selectOverlap={false}
-            events={this.state.currentEvents}
-            selectConstraint={{start: '2021-08-02'}}
-            eventDurationEditable={false}
-            weekends={this.state.weekendsVisible}
-            select=  {this.anotherf}//{this.handleDateSelect()}
+                initialView="dayGridMonth"
+                editable={false}
+                selectable={true}
+                selectOverlap={false}
+                events={this.state.currentEvents}
+                selectConstraint={{start: '2021-08-02'}}
+                eventDurationEditable={false}
+                weekends={this.state.weekendsVisible}
+                select=  {this.anotherf}//{this.handleDateSelect()}
             
-          />
+              />
+          </div>
           
-           {this.state.show && <CalendarModal data={this.state}/>}
+              {this.state.show && <CalendarModal data={this.state}/>}
           
-        </div>
-      </div>
-      </div>
+            {/*</div>*/}
+          {/*</div>*/}
+        </section>
     );
   }
 

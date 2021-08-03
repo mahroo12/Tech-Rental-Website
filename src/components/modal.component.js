@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import "./modal.component.css";
 
 
 export default class Modal extends Component {
    render(){
         return(
-        <div>
+        <div className= "modalBackground">
             <div className= "modalContainer">
                 <div className= "title">
                     <h1>Are you sure you want to continue?</h1>
