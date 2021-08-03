@@ -81,8 +81,8 @@ export default class CreateSchedule extends Component {
                     </div>
                     
                 </div>
-                <div style= {{position: 'relative', zIndex:10}}>
-                {this.state.openModal && <Modal />}</div>
+                
+                {this.state.openModal && <Modal />}
             </div>
         )
     }

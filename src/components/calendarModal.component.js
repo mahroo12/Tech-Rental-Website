@@ -6,7 +6,7 @@ export default class CalendarModal extends Component {
         return(
         
             <div className= "anotherModalContainer" style= {{top: 0, bottom: 0, right: 0, left: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', justifyContent: 'center', position: 'fixed', zIndex: '1000'}}>
-                <div className= "anotherMtitle" style= {{padding: '40px', margin: '100px', width: '500px', height: '400px', backgroundColor: 'white', borderRadius: '10px', textAlign: 'center', boxShadow: "3px 3px 3px #9E9E9E"}}>
+                <div className= "anotherMtitle" style= {{padding: '40px', margin: '100px', width: '500px', height: '400px', backgroundColor: 'white', borderRadius: '10px', textAlign: 'center', boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"}}>
                     <div >   
                         <h1>Are you ready to book?</h1>
                     </div>
