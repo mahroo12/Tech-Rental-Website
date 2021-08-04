@@ -66,7 +66,7 @@ export default class CreateSchedule extends Component {
                                         </form>
                                     </td>
                                 </tr>
-                                <tr >
+                                <tr>
                                     <td style={{paddingLeft:'50px', textAlign: 'center'}}>ID7676</td>
                                     <td style={{paddingLeft:'50px', textAlign: 'center'}}>linux</td>
                                     
