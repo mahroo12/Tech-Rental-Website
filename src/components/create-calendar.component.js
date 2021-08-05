@@ -1,7 +1,7 @@
 //import React from "react";
 import React, {Component} from 'react';
 import axios from 'axios';
-import moment from "moment";
+
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -64,9 +64,11 @@ export default class CreateCalendar extends Component {
                 editable={false}
                 selectable={true}
                 selectOverlap={false}
+                
                 events={this.state.currentEvents}
-                selectConstraint={{start: '2021-08-02'}}
+                selectConstraint={{start: '2021-08-04'}}
                 eventDurationEditable={false}
+                defaultAllDay= {false}
                 weekends={this.state.weekendsVisible}
                 select=  {this.anotherf}//{this.handleDateSelect()}
             

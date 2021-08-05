@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import "react-datepicker/dist/react-datepicker.css";
+//import "react-datepicker/dist/react-datepicker.css";
 
 import axios from 'axios';
 
@@ -25,7 +25,7 @@ export default class CreateStudent extends Component {
       major: '',
       start: null,
       end: null,
-      arr: [],
+      
       
 
 
