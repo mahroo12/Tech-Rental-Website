@@ -6,7 +6,7 @@ const studentSchema = new Schema(
     title:{type:String, required: true, trim:true, minlength: 3},
     studentid: {type:Number, required: true},
     studentemail:{type:String, required: true},
-    major:{type:String, required: false},
+    color:{type:String, required: false},
     start:{type:Date, required: true},
     end:{type:Date, required: true},
     },

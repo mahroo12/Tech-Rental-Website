@@ -12,7 +12,7 @@ export default class CreateStudent extends Component {
     this.onChangeStudentname = this.onChangeStudentname.bind(this);
     this.onChangeStudentid = this.onChangeStudentid.bind(this);
     this.onChangeStudentemail = this.onChangeStudentemail.bind(this);
-    this.onChangemajor = this.onChangemajor.bind(this);
+    this.onChangecolor = this.onChangecolor.bind(this);
     this.onChangeStartdate = this.onChangeStartdate.bind(this);
     this.onChangeEnddate = this.onChangeEnddate.bind(this);
 
@@ -22,7 +22,7 @@ export default class CreateStudent extends Component {
       title: '',
       studentid: '',
       studentemail: '',
-      major: '',
+      color: '',
       start: null,
       end: null,
       
@@ -74,9 +74,9 @@ export default class CreateStudent extends Component {
     }
 
    
-    onChangemajor(e) {
+    onChangecolor(e) {
         this.setState({
-            major: e.target.value
+            color: e.target.value
             });
     }
     
@@ -101,7 +101,7 @@ export default class CreateStudent extends Component {
       title: this.state.title,
       studentid: this.state.studentid,
       studentemail: this.state.studentemail,
-      major: this.state.major,
+      color: this.state.color,
       start: this.props.location.params,//this.state.startdate,
       end: this.props.location.param2//this.state.enddate
     }
@@ -175,8 +175,8 @@ export default class CreateStudent extends Component {
                 <input style={{ marginLeft: '30px' , marginTop: '10px', marginBottom: '10px', width: '200px'}} type="text"
                   
                   className="form-control"
-                  value={this.state.major}
-                  onChange={this.onChangemajor}
+                  value={this.state.color}
+                  onChange={this.onChangecolor}
                   />
               </div>
               <div className="form-group"> 

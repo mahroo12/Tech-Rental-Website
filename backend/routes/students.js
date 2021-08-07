@@ -9,11 +9,12 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' +err));
 });
 
+
 router.route('/add').post((req, res) => {
     const title = req.body.title;
     const studentid = Number(req.body.studentid);
     const studentemail = req.body.studentemail;
-    const major = req.body.major;
+    const color = req.body.color;
     const start= Date.parse(req.body.start);
     const end= Date.parse(req.body.end);
 
@@ -21,7 +22,7 @@ router.route('/add').post((req, res) => {
         title,
         studentid,
         studentemail,
-        major,
+        color,
         start,
         end,
     });

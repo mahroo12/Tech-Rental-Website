@@ -1,5 +1,6 @@
 //import React from "react";
 import React, {Component} from 'react';
+
 import axios from 'axios';
 
 import FullCalendar from "@fullcalendar/react";
@@ -16,14 +17,15 @@ export default class CreateCalendar extends Component {
       theDate: null,
       theEndDate: null,
       weekendsVisible: true,
-      currentEvents: [],
-      arr: []
+      currentEvents: []
+      
     };
     //this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
 
   }
  
+  
   componentDidMount() {
       axios.get('http://localhost:5000/students/')
         .then(response =>  this.setState({currentEvents: response.data}));
@@ -65,7 +67,22 @@ export default class CreateCalendar extends Component {
                 selectable={true}
                 selectOverlap={false}
                 
-                events={this.state.currentEvents}
+                events=  {this.state.currentEvents}/*{[
+                  {
+                    
+                    title: 'my event',
+                    start: '2021-08-06T23:00:00.000+00:00',
+                    end: '2021-08-09T23:00:00.000+00:00',
+                    color: 'red'
+                  }, 
+                  {
+                    
+                    title: 'another event',
+                    start: '2021-08-16T23:00:00.000+00:00',
+                    end: '2021-08-19T23:00:00.000+00:00',
+                    color: 'green'
+                  }
+                ]}*/
                 selectConstraint={{start: '2021-08-04'}}
                 eventDurationEditable={false}
                 defaultAllDay= {false}
