@@ -1,0 +1,72 @@
+.heading1{
+    color: #545B9E;
+    font-size: 20px;
+    padding-left: 32px;
+}
+
+.line{
+    color: #9062DC50;
+    height: 1px;
+}
+
+.main-pink-block{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-block{
+    margin-left: 30px;
+    margin-bottom: 30px;
+    background-color:#FAFAFF;
+    height:500px; 
+    width:550px; 
+    border-radius: 5px;
+}
+
+.full-name-label{
+    padding-left: 30px;
+    color:#00000060;
+}
+
+.form-control{
+    margin-left: 30px ;
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    width: 200px;
+}
+
+.student-id-label{
+    padding-left: 30px;
+    color:#00000060;
+}
+
+.email-label{
+    padding-left: 30px;
+     color:#00000060;
+}
+
+.major-label{
+    padding-left: 30px;
+    color:#00000060;
+}
+
+.start-date-label {
+    padding-left: 30px;
+    color:#00000060;
+}
+
+.start-date-input{
+    padding-left: 30px; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+.end-date-label{
+    padding-left: 30px;
+    color:#00000060;
+}
+
+.end-date-input{
+    padding-left: 30px; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
