@@ -1,7 +1,4 @@
 import React, {Component} from 'react';
-
-//import "react-datepicker/dist/react-datepicker.css";
-
 import axios from 'axios';
 
 export default class CreateStudent extends Component {
@@ -32,28 +29,6 @@ export default class CreateStudent extends Component {
     }
   }
 
-  /*
-  componentDidMount() {
-   // axios.get('http://localhost:5000/students/')
-    //  .then(response =>  this.setState({...this.state, arr: response.data}));
-
-      //const obj = {'title' : 'hello', 'major' : 'smth'};
-      //const obj2 = {'title' : 'hi', 'major' : 'another'};
-      //this.state.arr.push(obj);
-      //console.log(this.state.arr);
-      //this.state.arr.push(obj2);
-      //console.log(this.state.arr);
-      
-     // this.setState({
-       // arr: this.state.arr.concat({'title' : 'a', 'major' : 'm'})
-      //});
-
-     // console.log(this.state.arr);
-
-     axios.get('http://localhost:5000/students/')
-       .then(response =>  response.data.map((obj) => this.state.arr.push({'title' : obj.studentname, 'major': obj.major})));
-       console.log(this.state.arr);
-    }*/
 
   onChangeStudentname(e) {
     this.setState({
@@ -102,8 +77,8 @@ export default class CreateStudent extends Component {
       studentid: this.state.studentid,
       studentemail: this.state.studentemail,
       color: this.state.color,
-      start: this.props.location.params,//this.state.startdate,
-      end: this.props.location.param2//this.state.enddate
+      start: this.props.location.params,
+      end: this.props.location.param2
     }
 
 
@@ -115,15 +90,6 @@ export default class CreateStudent extends Component {
       .then(res => console.log(res.data));
     
       
-
-      //console.log("the arr is:");
-      //console.log(this.state.arr);
-              
-   
-
-      
-
-              //window.location = '/';
 
   }
 
