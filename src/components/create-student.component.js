@@ -172,11 +172,11 @@ export default class CreateStudent extends Component {
               </div>
 
             </form>
-            
+
           </div>
 
           <div>
-          <div className="another-div" style={{backgroundColor:'#FAFAFF', height:'300px', width:'450px', marginRight: '30px', borderRadius: '5px'}}>
+          <div className="another-div" >
           </div>
           
           </div>
