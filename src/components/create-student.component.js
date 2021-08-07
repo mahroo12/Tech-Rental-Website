@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-
+import "./createStudent.css";
 export default class CreateStudent extends Component {
   
     constructor(props) {
@@ -97,28 +97,30 @@ export default class CreateStudent extends Component {
     return (
         
       <div >
-        <h3 style= {{color:'#545B9E', fontSize:20, paddingLeft: '32px'}}>Student Information form</h3>
-        <hr style={{color: '#9062DC50',height: 1}}/>
+        <h3 className= "heading1" >Student Information form</h3>
+        <hr className= "line"/>
         
-        <div className="main-pink-block" style={{display: 'flex', justifyContent: 'space-between'}}>
+        <div className="main-pink-block" >
           
-          <div className="form-block" style={{marginLeft: '30px',marginBottom: '30px', backgroundColor:'#FAFAFF', height:'500px', width:'550px', borderRadius: '5px'}}>
+          <div className="form-block">
             <form onSubmit={this.onSubmit}>
+              
               <div className="form-group"> 
                 
-                <label style={{paddingLeft: '30px', color:'#00000060'}}>Full Name: </label>
-                <input   style={{ marginLeft: '30px' , marginTop: '10px', marginBottom: '10px', width: '200px'}} type="text"
+                <label className= "full-name-label">Full Name: </label>
+                <input type="text"
                   required
                   className="form-control"
                   value={this.state.title}
                   onChange={this.onChangeStudentname}
                   />
+
               </div>
               
               <div className="form-group"> 
               
-                <label style={{paddingLeft: '30px', color:'#00000060'}}>Student ID: </label>
-                <input   style={{ marginLeft: '30px' , marginTop: '10px', marginBottom: '10px', width: '200px'}} type="text"
+                <label className= "student-id-label" >Student ID: </label>
+                <input type="text"
                   required
                   className="form-control"
                   value={this.state.studentid}
@@ -127,8 +129,8 @@ export default class CreateStudent extends Component {
               </div>
 
               <div className="form-group"> 
-                <label style={{paddingLeft: '30px', color:'#00000060'}}>Email: </label>
-                <input   style={{ marginLeft: '30px' , marginTop: '10px', marginBottom: '10px', width: '200px'}} type="text"
+                <label className= "email-label">Email: </label>
+                <input type="text"
                   required
                   className="form-control"
                   value={this.state.studentemail}
@@ -137,34 +139,40 @@ export default class CreateStudent extends Component {
               </div>
 
               <div className="form-group"> 
-               <label style={{paddingLeft: '30px', color:'#00000060'}}>Major: </label>
-                <input style={{ marginLeft: '30px' , marginTop: '10px', marginBottom: '10px', width: '200px'}} type="text"
+               <label className="major-label">Major: </label>
+                <input type="text"
                   
                   className="form-control"
                   value={this.state.color}
                   onChange={this.onChangecolor}
                   />
               </div>
+
+
               <div className="form-group"> 
-                <label style={{paddingLeft: '30px', color:'#00000060'}}>Start Date: </label>
-                <div style={{paddingLeft: '30px', marginTop: '10px', marginBottom: '10px'}}>
-                <input value={this.props.location.params}/>
+                
+                <label className= "start-date-label" >Start Date: </label>
+                <div className="start-date-input">
+                  <input value={this.props.location.params}/>
                 </div>
+
               </div>
 
               <div className="form-group"> 
-                <label style={{paddingLeft: '30px', color:'#00000060'}}>End Date: </label>
-                <div style={{paddingLeft: '30px', marginTop: '10px', marginBottom: '10px'}}>
-                <input value={this.props.location.param2}/>
-                  
+                
+                <label className="end-date-label">End Date: </label>
+                <div className="end-date-input" >
+                  <input value={this.props.location.param2}/>
                 </div>
+
               </div>
             
               <div className="form-group">
               <input style={{ marginTop: '160px', marginLeft: '30px', backgroundColor: '#545B9E'}} type="submit" value="Submit" className="btn btn-primary" />
-          </div>
+              </div>
 
             </form>
+            
           </div>
 
           <div>
