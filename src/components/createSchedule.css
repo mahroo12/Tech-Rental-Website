@@ -1,0 +1,78 @@
+.top-div{
+    padding-bottom: 50px;
+}
+
+.white-div{
+    
+    background-color: #FFFFFF;
+    width: 140vh;
+    height: 470px;
+    position: relative;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 40px;
+    margin-left: 220px;
+    margin-bottom: 100px;
+    padding-left: 15px;
+    border-radius: 10px;
+}
+
+.computer-list-label{
+    padding-top: 50px;
+    padding-left:5px;
+    text-align: center;
+}
+
+.div-to-centre-table{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+.table-cl{
+    border-collapse: collapse;
+}
+.table-head{
+    background-color: #EEE; 
+    padding: 10px;
+}
+
+.head-id{
+    border-radius: 5px 0 0 5px;
+    padding-left: 50px;
+    text-align: center;
+}
+
+.head-os{
+    padding-left: 50px;
+    text-align: center;
+}
+
+.head-schedule{
+    border-radius: 0 5px 5px 0;
+    padding-left: 50px;
+    width: 300px;
+    text-align: center;
+}
+
+.row-content{
+    padding-left:50px;
+    text-align: center;
+}
+
+.row-content2{
+    padding-left:50px;
+}
+
+.row-content-exp{
+    padding-left:50px;
+    z-index: 1;
+}
+
+.form-div{
+   display: flex;
+   justify-content: center;
+}
+
+.book-button-div{
+    padding-top: 5px;
+}
