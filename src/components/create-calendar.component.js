@@ -35,20 +35,13 @@ export default class CreateCalendar extends Component {
         
         
   }
-  hideModal = () => {
-    this.setState({ show: false });
-  };
-  getTheDate = (selectInfo) =>{
-    this.setState({theDate: selectInfo.startStr, 
-    theEndDate: selectInfo.endStr});
-  };
+  
 
   render() {
     return (
       
         <section style={{ backgroundColor: 	'#FFFFFF'}}>
           <div className="cl" style={{padding: '20px', position: 'relative', zIndex: 0}}>
-            {/*<div className="demo-app-main">*/}
               {console.log('the value is')}
               {console.log(this.state.currentEvents)} 
          
@@ -67,22 +60,7 @@ export default class CreateCalendar extends Component {
                 selectable={true}
                 selectOverlap={false}
                 
-                events=  {this.state.currentEvents}/*{[
-                  {
-                    
-                    title: 'my event',
-                    start: '2021-08-06T23:00:00.000+00:00',
-                    end: '2021-08-09T23:00:00.000+00:00',
-                    color: 'red'
-                  }, 
-                  {
-                    
-                    title: 'another event',
-                    start: '2021-08-16T23:00:00.000+00:00',
-                    end: '2021-08-19T23:00:00.000+00:00',
-                    color: 'green'
-                  }
-                ]}*/
+                events=  {this.state.currentEvents}
                 selectConstraint={{start: '2021-08-04'}}
                 eventDurationEditable={false}
                 defaultAllDay= {false}
@@ -93,22 +71,27 @@ export default class CreateCalendar extends Component {
           </div>
           
               {this.state.show && <CalendarModal data={this.state}/>}
-          
-            {/*</div>*/}
-          {/*</div>*/}
         </section>
     );
   }
 
+  hideModal = () => {
+    this.setState({ show: false });
+  };
 
+  getTheDate = (selectInfo) =>{
+    this.setState({theDate: selectInfo.startStr, 
+    theEndDate: selectInfo.endStr});
+  };
 
   handleWeekendsToggle = () => {
     this.setState({
       weekendsVisible: !this.state.weekendsVisible
     });
   };
+
   anotherf =(selectInfo) =>{
-    //preventDefault();
+    
     this.helperfunction(selectInfo);
     this.getTheDate (selectInfo);
    // this.handleDateSelect(selectInfo);
@@ -116,15 +99,16 @@ export default class CreateCalendar extends Component {
     
   //  this.moveToAnotherPage();
   };
+
   showModal = () => {
     this.setState({ 
       show: true 
     });
   };
+
   helperfunction = (selectInfo) =>{
     alert("selected date is from" + selectInfo.startStr + "to" + selectInfo.endStr);
     let calendarApi = selectInfo.view.calendar;
-    //let history = useHistory();
     calendarApi.unselect(); 
   };
 
@@ -133,10 +117,9 @@ export default class CreateCalendar extends Component {
   };
 
   handleDateSelect = (selectInfo) => {
-    //try to form a form here and use the information as input
+    
     let title = prompt("Please enter a new title for your event");
     let calendarApi = selectInfo.view.calendar;
-    //let history = useHistory();
     calendarApi.unselect(); // clear date selection
     
     if (title) {
@@ -148,13 +131,6 @@ export default class CreateCalendar extends Component {
         end: selectInfo.endStr,
         allDay: selectInfo.allDay
       });
-      
-      
-      //setTimeout(this.props.history.push('/schedule'), 5000);
-      //window.location.href = "/schedule";
-     
-    
     }
-    //alert("selected date is from" + selectInfo.startStr + "to" + selectInfo.endStr);
   };
 }
