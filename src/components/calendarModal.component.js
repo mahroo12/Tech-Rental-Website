@@ -17,7 +17,7 @@ export default class CalendarModal extends Component {
                 
                     <div className= "anotherMfooter" style={{padding: '40px', display: 'flex', justifyContent: 'space-between', textAlign: 'center'}}>
                         <Link to="/schedule" className="btn btn-primary">Book</Link>
-                        <Link to= {{pathname: "/student", params: this.props.data.theDate, param2: this.props.data.theEndDate}} className="btn btn-primary">Continue</Link>
+                        <Link to= {{pathname: "/student", params: this.props.data.theDate, param2: this.props.data.theEndDate, param3: this.props.data.theColor}} className="btn btn-primary">Continue</Link>
                     
                     </div>
                 </div>

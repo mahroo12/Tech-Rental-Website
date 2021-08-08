@@ -16,6 +16,7 @@ export default class CreateCalendar extends Component {
       show: false,
       theDate: null,
       theEndDate: null,
+      theColor: null,
       weekendsVisible: true,
       currentEvents: []
       
@@ -75,47 +76,53 @@ export default class CreateCalendar extends Component {
     );
   }
 
-  hideModal = () => {
-    this.setState({ show: false });
-  };
-
-  getTheDate = (selectInfo) =>{
-    this.setState({theDate: selectInfo.startStr, 
-    theEndDate: selectInfo.endStr});
-  };
-
-  handleWeekendsToggle = () => {
-    this.setState({
-      weekendsVisible: !this.state.weekendsVisible
-    });
-  };
-
-  anotherf =(selectInfo) =>{
-    
-    this.helperfunction(selectInfo);
-    this.getTheDate (selectInfo);
-   // this.handleDateSelect(selectInfo);
-    this.showModal();
-    
-  //  this.moveToAnotherPage();
-  };
-
   showModal = () => {
     this.setState({ 
       show: true 
     });
   };
 
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+
+  getTheDate = (selectInfo) =>{
+    this.setState({
+      theDate: selectInfo.startStr, 
+      theEndDate: selectInfo.endStr,
+      theColor: this.props.location.color_attribute
+    });
+  };
+
   helperfunction = (selectInfo) =>{
-    alert("selected date is from" + selectInfo.startStr + "to" + selectInfo.endStr);
+    alert("selected date is from" + selectInfo.startStr + "to" + selectInfo.endStr + "and" + this.props.location.color_attribute);
     let calendarApi = selectInfo.view.calendar;
     calendarApi.unselect(); 
   };
+
+  anotherf =(selectInfo) =>{
+    
+    this.helperfunction(selectInfo);
+    this.getTheDate (selectInfo);
+    // this.handleDateSelect(selectInfo);
+    this.showModal();
+    //  this.moveToAnotherPage();
+  };
+
+/*
+  handleWeekendsToggle = () => {
+    this.setState({
+      weekendsVisible: !this.state.weekendsVisible
+    });
+  };
+
+
 
   moveToAnotherPage=()=>{
     window.location.href = "/schedule";
   };
 
+  
   handleDateSelect = (selectInfo) => {
     
     let title = prompt("Please enter a new title for your event");
@@ -132,5 +139,5 @@ export default class CreateCalendar extends Component {
         allDay: selectInfo.allDay
       });
     }
-  };
+  };*/
 }
