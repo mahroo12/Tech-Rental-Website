@@ -45,7 +45,7 @@ export default class CreateCalendar extends Component {
               {console.log('the value is')}
               {console.log(this.state.currentEvents)} 
          
-         
+              <h1>{this.props.location.color_attribute}</h1>
               <FullCalendar
           
                 plugins={[dayGridPlugin, interactionPlugin]}

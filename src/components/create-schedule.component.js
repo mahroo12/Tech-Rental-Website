@@ -45,14 +45,15 @@ export default class CreateSchedule extends Component {
                                                 
                                                 <div>
                                                     <input style={{margin: '5px'}} 
-                                                        type= "submit" value="View" 
+                                                        type= "submit" 
+                                                        value="View" 
                                                         className="btn btn-primary" 
                                                         onClick={(e) => this.setState({ openModal: true}) & e.preventDefault()}
                                                     />
                                                 </div>
 
                                                 <div className ="book-button-div">
-                                                    <Link to="/calendar" 
+                                                    <Link to= {{pathname: "/calendar", color_attribute: "blue" }}
                                                         className="btn btn-primary">Book
                                                     </Link>
                                                 </div>
@@ -75,7 +76,7 @@ export default class CreateSchedule extends Component {
                                                 </div>
                                                 
                                                 <div className ="book-button-div">
-                                                    <Link to="/calendar" 
+                                                    <Link to={{pathname: "/calendar", color_attribute: "red" }}
                                                         className="btn btn-primary">Book
                                                     </Link>
                                                 </div >
