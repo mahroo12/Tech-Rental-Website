@@ -53,7 +53,7 @@ export default class CreateSchedule extends Component {
                                                 </div>
 
                                                 <div className ="book-button-div">
-                                                    <Link to= {{pathname: "/calendar", color_attribute: "blue" }}
+                                                    <Link to= {{pathname: "/calendar", color_attribute: "turquoise" }}
                                                         className="btn btn-primary">Book
                                                     </Link>
                                                 </div>
@@ -76,7 +76,7 @@ export default class CreateSchedule extends Component {
                                                 </div>
                                                 
                                                 <div className ="book-button-div">
-                                                    <Link to={{pathname: "/calendar", color_attribute: "red" }}
+                                                    <Link to= {{pathname: "/calendar", color_attribute: "brown" }}
                                                         className="btn btn-primary">Book
                                                     </Link>
                                                 </div >
@@ -102,7 +102,7 @@ export default class CreateSchedule extends Component {
                                                 </div>
                                                 
                                                 <div className ="book-button-div">
-                                                    <Link to="/calendar" 
+                                                    <Link to={{pathname: "/calendar", color_attribute: "green" }}
                                                         className="btn btn-primary">Book
                                                     </Link>
                                                 </div >
@@ -126,7 +126,7 @@ export default class CreateSchedule extends Component {
                                                 </div>
                                             
                                                 <div className ="book-button-div">
-                                                    <Link to="/calendar" 
+                                                    <Link to={{pathname: "/calendar", color_attribute: "orange" }}
                                                         className="btn btn-primary">Book
                                                     </Link>
                                                 </div >
@@ -149,7 +149,7 @@ export default class CreateSchedule extends Component {
                                                 </div>
                                             
                                                 <div className ="book-button-div">
-                                                    <Link to="/calendar" 
+                                                    <Link to={{pathname: "/calendar", color_attribute: "purple" }}
                                                         className="btn btn-primary">Book
                                                     </Link>
                                                 </div >
