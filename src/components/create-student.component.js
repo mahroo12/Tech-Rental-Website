@@ -76,7 +76,7 @@ export default class CreateStudent extends Component {
       title: this.state.title,
       studentid: this.state.studentid,
       studentemail: this.state.studentemail,
-      color: this.props.location.param3,//this.state.color,
+      color: this.props.location.param3,
       start: this.props.location.params,
       end: this.props.location.param2
     }
@@ -143,8 +143,7 @@ export default class CreateStudent extends Component {
                 <input type="text"
                   
                   className="form-control"
-                  value= {this.props.location.param3}//{this.state.color}
-                  //onChange={this.onChangecolor}
+                  value= {this.props.location.param3}
                   />
               </div>
 

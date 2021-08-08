@@ -46,7 +46,6 @@ export default class CreateCalendar extends Component {
               {console.log('the value is')}
               {console.log(this.state.currentEvents)} 
          
-              <h1>{this.props.location.color_attribute}</h1>
               <FullCalendar
           
                 plugins={[dayGridPlugin, interactionPlugin]}
@@ -66,7 +65,7 @@ export default class CreateCalendar extends Component {
                 eventDurationEditable={false}
                 defaultAllDay= {false}
                 weekends={this.state.weekendsVisible}
-                select=  {this.anotherf}//{this.handleDateSelect()}
+                select=  {this.anotherf}
             
               />
           </div>
@@ -104,40 +103,6 @@ export default class CreateCalendar extends Component {
     
     this.helperfunction(selectInfo);
     this.getTheDate (selectInfo);
-    // this.handleDateSelect(selectInfo);
     this.showModal();
-    //  this.moveToAnotherPage();
   };
-
-/*
-  handleWeekendsToggle = () => {
-    this.setState({
-      weekendsVisible: !this.state.weekendsVisible
-    });
-  };
-
-
-
-  moveToAnotherPage=()=>{
-    window.location.href = "/schedule";
-  };
-
-  
-  handleDateSelect = (selectInfo) => {
-    
-    let title = prompt("Please enter a new title for your event");
-    let calendarApi = selectInfo.view.calendar;
-    calendarApi.unselect(); // clear date selection
-    
-    if (title) {
-    
-    //<Redirect to="/schedule" />;
-      calendarApi.addEvent({
-        title,
-        start: selectInfo.startStr,
-        end: selectInfo.endStr,
-        allDay: selectInfo.allDay
-      });
-    }
-  };*/
 }
