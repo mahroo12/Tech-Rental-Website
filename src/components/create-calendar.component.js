@@ -61,6 +61,7 @@ export default class CreateCalendar extends Component {
                 selectOverlap={false}
                 
                 events=  {this.state.currentEvents}
+                eventClick= {this.displayEventInfo}
                 selectConstraint={{start: '2021-08-04'}}
                 eventDurationEditable={false}
                 defaultAllDay= {false}
@@ -91,6 +92,10 @@ export default class CreateCalendar extends Component {
       theEndDate: selectInfo.endStr,
       theColor: this.props.location.color_attribute
     });
+  };
+
+  displayEventInfo = (selectInfo) =>{
+    alert(selectInfo.event.extendedProps.studentid);
   };
 
   helperfunction = (selectInfo) =>{
