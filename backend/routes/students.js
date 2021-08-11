@@ -60,4 +60,10 @@ router.route('/add').post((req, res) => {
 
 });
 
+router.route('/:id').delete((req, res) => {
+  Student.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Student deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;

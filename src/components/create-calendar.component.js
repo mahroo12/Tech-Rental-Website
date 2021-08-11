@@ -23,6 +23,7 @@ export default class CreateCalendar extends Component {
     };
     //this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
+    this.displayEventInfo = this.displayEventInfo.bind(this);
 
   }
  
@@ -95,7 +96,10 @@ export default class CreateCalendar extends Component {
   };
 
   displayEventInfo = (selectInfo) =>{
-    alert(selectInfo.event.extendedProps.studentid);
+    alert(selectInfo.event.extendedProps._id);
+    const event_id_to_be_deleted = selectInfo.event.extendedProps._id;
+    axios.delete('http://localhost:5000/students/'+ event_id_to_be_deleted)
+      .then(response => { console.log(response.data)});
   };
 
   helperfunction = (selectInfo) =>{
