@@ -98,8 +98,17 @@ export default class CreateCalendar extends Component {
   displayEventInfo = (selectInfo) =>{
     alert(selectInfo.event.extendedProps._id);
     const event_id_to_be_deleted = selectInfo.event.extendedProps._id;
-    axios.delete('http://localhost:5000/students/'+ event_id_to_be_deleted)
+    const event_email = selectInfo.event.extendedProps.studentemail;
+    const email_address =prompt("what is the email address?");
+    //alert(email_address);
+    if (event_email === email_address){
+      axios.delete('http://localhost:5000/students/'+ event_id_to_be_deleted)
       .then(response => { console.log(response.data)});
+      window.location.reload();
+    }
+    else{
+      alert("wrong email. Try again");
+    }
   };
 
   helperfunction = (selectInfo) =>{
