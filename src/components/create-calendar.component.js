@@ -112,7 +112,7 @@ export default class CreateCalendar extends Component {
   };
 
   helperfunction = (selectInfo) =>{
-    alert("selected date is from" + selectInfo.startStr + "to" + selectInfo.endStr + "and" + this.props.location.color_attribute);
+    alert("selected date is from" + selectInfo.startStr + "to" + selectInfo.endStr);
     let calendarApi = selectInfo.view.calendar;
     calendarApi.unselect(); 
   };
