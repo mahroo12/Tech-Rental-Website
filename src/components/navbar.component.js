@@ -5,16 +5,31 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <Link to="/" className="navbar-brand">EUS</Link>
-        <div className="collpase navbar-collapse">
-        <ul className="navbar-nav mr-auto">
+      
+      <nav className="navbar navbar-dark bg-dark navbar-expand-lg"  >
+        
+        
+        <Link to="/" className="navbar-brand" style={{paddingLeft: '10px'}}>EUS</Link>
+        
+        <div className="collpase navbar-collapse" style={{display: 'flex', justifyContent: 'flex-end', paddingRight: '20px'}}>
+          <ul className="navbar-nav mr-auto">
           <li className="navbar-item">
-          <Link to="/schedule" className="nav-link">Schedule</Link>
-          </li>
-        </ul>
+            <Link to="/" className="nav-link">Home</Link>
+            </li>
+            <li className="navbar-item">
+            <Link to="/schedule" className="nav-link">Schedule</Link>
+            </li>
+            <li className="navbar-item">
+            <Link to="/" className="nav-link">About</Link>
+            </li>
+            <li className="navbar-item">
+            <Link to="/" className="nav-link">Admin Portal</Link>
+            </li>
+          </ul>
         </div>
+        
       </nav>
+      
     );
   }
 }
