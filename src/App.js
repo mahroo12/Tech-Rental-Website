@@ -7,16 +7,20 @@ import CreateStudent from "./components/create-student.component";
 import CreateSchedule from "./components/create-schedule.component";
 import CreateCalendar from './components/create-calendar.component';
 import SampleTest from './components/sampleTest.component';
+import Home from './components/home-page.component';
 
 
 function App() {
   return (
+    
     <Router>
       <body style={{backgroundColor: '#DBE0F2'}}>
       
         <Navbar />
+        
         <br/>
         
+        <Route path = "/" exact component= {Home}/>
         <Route path = "/student" component= {CreateStudent}/>
         <Route path = "/schedule" component= {CreateSchedule}/>
         <Route path = "/calendar" component= {CreateCalendar}/>
@@ -24,6 +28,8 @@ function App() {
       
       </body>
     </Router>
+    
+    
   );
 }
 
