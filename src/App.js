@@ -18,7 +18,7 @@ function App() {
       
         <Navbar />
         
-        <br/>
+        
         
         <Route path = "/" exact component= {Home}/>
         <Route path = "/student" component= {CreateStudent}/>
