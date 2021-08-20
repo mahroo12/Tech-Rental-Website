@@ -5,8 +5,10 @@ import axios from 'axios';
 
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import momentPlugin from '@fullcalendar/moment'
 import interactionPlugin from "@fullcalendar/interaction";
 import CalendarModal from "./calendarModal.component";
+import moment from 'moment';
 
 
 export default class CreateCalendar extends Component {
@@ -49,7 +51,7 @@ export default class CreateCalendar extends Component {
          
               <FullCalendar
           
-                plugins={[dayGridPlugin, interactionPlugin]}
+                plugins={[dayGridPlugin, interactionPlugin, momentPlugin]}
                 headerToolbar={{
                 left: "prev,next today",
                 center: "title",
@@ -59,9 +61,9 @@ export default class CreateCalendar extends Component {
                 initialView="dayGridMonth"
                 editable={false}
                 selectable={true}
-                selectOverlap={false}
+                selectOverlap={true}
                 
-                events=  {this.state.currentEvents}
+                events= {this.state.currentEvents}
                 eventClick= {this.displayEventInfo}
                 selectConstraint={{start: '2021-08-04'}}
                 eventDurationEditable={false}
@@ -89,7 +91,7 @@ export default class CreateCalendar extends Component {
 
   getTheDate = (selectInfo) =>{
     this.setState({
-      theDate: selectInfo.startStr, 
+      theDate: moment(selectInfo.startStr).set({hour:23}).format(), 
       theEndDate: selectInfo.endStr,
       theColor: this.props.location.color_attribute
     });
@@ -112,7 +114,11 @@ export default class CreateCalendar extends Component {
   };
 
   helperfunction = (selectInfo) =>{
-    alert("selected date is from" + selectInfo.startStr + "to" + selectInfo.endStr);
+
+    const d = moment(selectInfo.startStr);
+    const ad = d.set({hour:23});
+    
+    alert("selected date is from" + ad.format() + "to" + selectInfo.endStr);
     let calendarApi = selectInfo.view.calendar;
     calendarApi.unselect(); 
   };
