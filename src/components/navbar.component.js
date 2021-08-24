@@ -7,7 +7,7 @@ export default class Navbar extends Component {
     return (
       <div>
       
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg"  >
+      <nav className="navbar fixed-top navbar-dark bg-dark navbar-expand-lg"  style= {{boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
         
         
         <Link to="/" className="navbar-brand" style={{paddingLeft: '10px'}}>EUS</Link>
