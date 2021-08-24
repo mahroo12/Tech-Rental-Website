@@ -17,7 +17,7 @@ export default class CreateSchedule extends Component {
     {
         
         return(
-            <div className= "top-div">
+            <div className= "top-div" >
                 <div className= "white-div" >
                     
                     <h3 className= "computer-list-label">Computer List</h3>

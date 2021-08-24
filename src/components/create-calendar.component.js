@@ -44,7 +44,7 @@ export default class CreateCalendar extends Component {
   render() {
     return (
       
-        <section style={{ backgroundColor: 	'#FFFFFF'}}>
+        <section style={{ backgroundColor: 	'#FFFFFF', paddingTop: '100px'}}>
           <div className="cl" style={{padding: '20px', position: 'relative', zIndex: 0}}>
               {console.log('the value is')}
               {console.log(this.state.currentEvents)} 
