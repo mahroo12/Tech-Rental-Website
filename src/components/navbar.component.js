@@ -11,7 +11,7 @@ export default class Navbar extends Component {
         
         
         <Link to="/" className="navbar-brand" style={{paddingLeft: '10px'}}>EUS</Link>
-        
+        {/*<img className="navbar-brand" src={require('../images/eus_logo.png').default} height={60} style={{paddingLeft: '10px'}} ></img>*/}
         <div className="collpase navbar-collapse" style={{display: 'flex', justifyContent: 'flex-end', paddingRight: '20px'}}>
           <ul className="navbar-nav mr-auto">
           <li className="navbar-item">

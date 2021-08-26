@@ -10,43 +10,39 @@ export default class Home extends Component {
               
               <div className= "the_text_pic_wrapper" style={{display: 'flex', justifyContent: 'space-between', padding: '25px', marginTop: '100px'}}>
                 <div className="the_image" >
-                <h1>hello </h1>
+                <img src={require('../images/laptops.PNG').default} alt="laptops" height={350} width={600} style={{paddingLeft: '25px'}}></img>
                 </div>
 
                 <div className="the_text">
                     <div className= "text_part">
-                    <h1>Software for <br/> Nonprofits</h1>
+                    <h1 className= "test" style={{fontWeight: '800', fontSize: '50px'}}>Book your<br/> equipment now!</h1>
                     <br/>
-                    <p>We are a team of McGill students who create robust software <br/>
-                     for social good. We believe that our engineering skill sets do not<br/> 
-                    render us useless in addressing social injustices. Instead, they empower<br/> 
-                    us to build a better society together.</p>
+                    <p>McGill students can now book the equipment of their choice<br/>
+                     free of cost for non-commercialised purposes. You simply have<br/> 
+                    to pick the the eqipment you want to rent, check its availabilities<br/> 
+                    and pick the dates that work best for you.</p>
                     </div>
 
                     <div className= "the_buttons" style={{display: 'flex', justifyContent: 'flex-start', paddingBottom: '10px'}}>
                     
-                        <div style={{padding: '10px'}}>
-                            <Link to="/schedule" className="btn btn-primary" style={{boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', border: 'none', backgroundColor: '#566AB1'}}> Computers</Link>
+                        <div style={{padding: '20px'}}>
+                            <Link to="/schedule" className="btn btn-primary" style={{boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', border: 'none', backgroundColor: '#566AB1', padding: '10px 20px', fontWeight: 'bold'}}> Computers</Link>
                         </div>
-                        <div style={{padding: '10px'}}>
-                            <Link to="#" className="btn btn-primary" style={{border: 'none',boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', color: '#566AB1', backgroundColor: '#FFFFFF40'}}>Others</Link>
+                        <div style={{padding: '20px'}}>
+                            <Link to="#" className="btn btn-primary" style={{boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px', border: 'none', color: '#566AB1', backgroundColor: '#FFFFFF40', padding: '10px 25px', fontWeight: 'bold', "&:hover": {cursor: "pointer", backgroundColor: "#ffff9b", color: "#fd0808"}}} >Others</Link>
                         </div>
                     </div>
                 
                 </div>
               </div>
               <div className="another_para" style={{textAlign: 'center', padding: '30px'}}>
-                  <h2>We believe in using tech for good.</h2>
-                  <p>Each semester, we work with one or more non-profits with the opportunity to build a great product that solves a core <br/> need. 
-                    We work in small groups led by a product manager to scope and develop the application, taking into account our clients’ <br/>
-                    requirements and suggestions.</p>
+                  <h2>Engineering Undergraduate Society Rentals</h2>
+                  <p>Tech Rental is a part of Engineering Undergraduate Society, that enables engineering students to rent tech equipment <br/> such as laptops,
+                    projectors, HDMI cables etc. 
+                    You can book these equipment online through this website and collect the equipment <br/>from EUS office anytime from between 8 am to 5 pm. You may return the equiment
+                    back to EUS office anytime during the<br/> before mentioned operating hours.</p>
               </div>
-              <div className="another_para" style={{textAlign: 'center', padding: '30px'}}>
-                  <h2>We believe in using tech for good.</h2>
-                  <p>Each semester, we work with one or more non-profits with the opportunity to build a great product that solves a core <br/> need. 
-                    We work in small groups led by a product manager to scope and develop the application, taking into account our clients’ <br/>
-                    requirements and suggestions.</p>
-              </div>
+              
             {/*
             <div className="home">
                <div>
@@ -57,8 +53,8 @@ export default class Home extends Component {
                </div>
             </div>
             */}
-
-            <footer style={{backgroundColor: '#566AB1', display: 'flex', justifyContent: 'space-between', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
+            {/*
+            <div style={{backgroundColor: '#566AB1', display: 'flex', justifyContent: 'space-between', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
                 
                 
                         <Link to="/" className="nav-link" style={{color: 'white'}}>vpcomm@mcgilleus.ca</Link>
@@ -77,7 +73,48 @@ export default class Home extends Component {
                     </li>
                 </ul>
                 </div>
-            </footer>
+            </div>
+            */}
+
+            <div className="main_footer">
+                <div className="footer_container">
+                    {/*<div>
+                    <img src={require('../images/eus_logo.png').default} height={50}></img>
+                    </div>*/}
+                    <div className="footer_row">
+                    <div className="footer_column">
+                            <h4>Contact Us</h4>
+                            <ul className="navbar-nav mr-auto">
+                                <li>vpcomm@mcgilleus.ca</li>
+                                <li>vpcomm@mcgilleus.ca</li>
+                            </ul>
+
+
+                        </div>
+                        <div className="footer_column">
+                            <h4>Connect With Us</h4>
+                            <ul className="navbar-nav mr-auto">
+                                <li>Facebook</li>
+                                <li>Instagram</li>
+                            </ul>
+
+
+                        </div>
+                        <div className="footer_column">
+                            <h4>About Us</h4>
+                            <ul className="navbar-nav mr-auto">
+                                <li>About EUS</li>
+                                <li>About Tech Rentals</li>
+                            </ul>
+
+
+                        </div>
+
+                    </div>
+                
+                </div>
+
+            </div>
             </div>
             
         

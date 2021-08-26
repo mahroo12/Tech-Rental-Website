@@ -1,18 +1,33 @@
-.home{
-    background-image: url('../images/flag-shot.png');
-    background-repeat: no-repeat;
-    background-position:center ;
-    background-size: cover;
-    
-    
-    
-    
-    height: 140vh;
-    
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.test{
+    font-family: 'Roboto', sans-serif;
+}
+
+.main_footer{
+    color: white;
+    background-color: #566AB1;
+    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
 }
+.footer_row{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    
+}
+
+.footer_column{
+    padding: 10px;
+}
+
+
 
 
 /*padding-top: 800px;
     margin: 0px;*/
-

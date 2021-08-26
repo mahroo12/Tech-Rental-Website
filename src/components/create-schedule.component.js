@@ -44,17 +44,17 @@ export default class CreateSchedule extends Component {
                                             <div className="form-div">
                                                 
                                                 <div>
-                                                    <input style={{margin: '5px'}} 
+                                                    <input style={{margin: '5px', backgroundColor: '#545B9E', border: 'none'}} 
                                                         type= "submit" 
                                                         value="View" 
-                                                        className="btn btn-primary" 
+                                                        className="btn btn-primary"  
                                                         onClick={(e) => this.setState({ openModal: true}) & e.preventDefault()}
                                                     />
                                                 </div>
 
-                                                <div className ="book-button-div">
+                                                <div className ="book-button-div" >
                                                     <Link to= {{pathname: "/calendar", color_attribute: "turquoise" }}
-                                                        className="btn btn-primary">Book
+                                                        className="btn btn-primary" style={{backgroundColor: '#545B9E', border: 'none'}}>Book
                                                     </Link>
                                                 </div>
                                             </div>
@@ -68,7 +68,7 @@ export default class CreateSchedule extends Component {
                                         <form >
                                             <div className="form-div">
                                                 <div>
-                                                    <input style={{margin: '5px'}} 
+                                                    <input style={{margin: '5px', backgroundColor: '#545B9E', border: 'none'}} 
                                                         type= "submit" 
                                                         value="View" 
                                                         className="btn btn-primary" 
@@ -77,7 +77,7 @@ export default class CreateSchedule extends Component {
                                                 
                                                 <div className ="book-button-div">
                                                     <Link to= {{pathname: "/calendar", color_attribute: "brown" }}
-                                                        className="btn btn-primary">Book
+                                                        className="btn btn-primary" style={{backgroundColor: '#545B9E', border: 'none'}}>Book
                                                     </Link>
                                                 </div >
                                             
@@ -94,7 +94,7 @@ export default class CreateSchedule extends Component {
                                         <form >
                                             <div className="form-div">
                                                 <div>
-                                                    <input style={{margin: '5px'}} 
+                                                    <input style={{margin: '5px', backgroundColor: '#545B9E', border: 'none'}} 
                                                             type= "submit" 
                                                             value="View" 
                                                             className="btn btn-primary" 
@@ -103,7 +103,7 @@ export default class CreateSchedule extends Component {
                                                 
                                                 <div className ="book-button-div">
                                                     <Link to={{pathname: "/calendar", color_attribute: "green" }}
-                                                        className="btn btn-primary">Book
+                                                        className="btn btn-primary" style={{backgroundColor: '#545B9E', border: 'none'}}>Book
                                                     </Link>
                                                 </div >
                                             </div>
@@ -118,7 +118,7 @@ export default class CreateSchedule extends Component {
                                         <form >
                                             <div className="form-div">
                                                 <div>
-                                                    <input style={{margin: '5px'}} 
+                                                    <input style={{margin: '5px', backgroundColor: '#545B9E', border: 'none'}} 
                                                            type= "submit" 
                                                            value="View" 
                                                            className="btn btn-primary" 
@@ -127,7 +127,7 @@ export default class CreateSchedule extends Component {
                                             
                                                 <div className ="book-button-div">
                                                     <Link to={{pathname: "/calendar", color_attribute: "orange" }}
-                                                        className="btn btn-primary">Book
+                                                        className="btn btn-primary" style={{backgroundColor: '#545B9E', border: 'none'}}>Book
                                                     </Link>
                                                 </div >
                                             </div>
@@ -142,7 +142,7 @@ export default class CreateSchedule extends Component {
                                         <form >
                                             <div className="form-div">
                                                 <div>
-                                                    <input style={{margin: '5px'}} 
+                                                    <input style={{margin: '5px', backgroundColor: '#545B9E', border: 'none'}} 
                                                             type= "submit" value="View" 
                                                             className="btn btn-primary" 
                                                     />
@@ -150,7 +150,7 @@ export default class CreateSchedule extends Component {
                                             
                                                 <div className ="book-button-div">
                                                     <Link to={{pathname: "/calendar", color_attribute: "purple" }}
-                                                        className="btn btn-primary">Book
+                                                        className="btn btn-primary" style={{backgroundColor: '#545B9E', border: 'none'}}>Book
                                                     </Link>
                                                 </div >
                                             
