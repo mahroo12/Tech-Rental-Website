@@ -19,13 +19,19 @@
     padding: 40px; 
     margin: 100px;
     width: 500px;
-    height: 400px;
+    height: 450px;
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  .description{
+
+    font-family: 'Roboto', sans-serif;
   }
 .modalContainer .title {
     display: inline-block;

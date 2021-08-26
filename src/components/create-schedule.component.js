@@ -11,8 +11,10 @@ export default class CreateSchedule extends Component {
         this.state = {
           openModal: false
         };
+        this.hide_Modal = this.hide_Modal.bind(this);
       }
-    
+      
+      
     render()
     {
         
@@ -165,8 +167,11 @@ export default class CreateSchedule extends Component {
                     
                 </div>
                 
-                {this.state.openModal && <Modal />}
+                {this.state.openModal && <Modal hide_Modal = {this.hide_Modal}/>}
             </div>
         )
     }
+    hide_Modal = () => {
+        this.setState({ openModal: false });
+      };
 }
