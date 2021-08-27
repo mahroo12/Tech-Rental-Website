@@ -12,12 +12,12 @@ export default class CalendarModal extends Component {
                     </div>
                 
                     <div className= "anotherMbody" style={{padding: '40px'}}>
-                        <p>Click yes to confirm booking for {this.props.data.theDate}! </p>
+                        <p>Click on Continue to be directed to the computer rental booking page. </p>
                     </div>
                 
                     <div className= "anotherMfooter" style={{padding: '40px', display: 'flex', justifyContent: 'space-between', textAlign: 'center'}}>
-                        <Link to="/schedule" className="btn btn-primary">Book</Link>
-                        <Link to= {{pathname: "/student", params: this.props.data.theDate, param2: this.props.data.theEndDate, param3: this.props.data.theColor}} className="btn btn-primary">Continue</Link>
+                    <Link to= {{pathname: "/student", params: this.props.data.theDate, param2: this.props.data.theEndDate, param3: this.props.data.theColor}} className="btn btn-primary" style={{ boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',backgroundColor: '#545B9E'}}>Continue</Link>
+                    <button style={{boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',borderRadius: '5px', border: 'none', backgroundColor: '#545B9E', color: 'white'}}  onClick = {this.props.hide_form_Modal}>Cancel</button>
                     
                     </div>
                 </div>

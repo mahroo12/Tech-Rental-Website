@@ -8,6 +8,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import momentPlugin from '@fullcalendar/moment'
 import interactionPlugin from "@fullcalendar/interaction";
 import CalendarModal from "./calendarModal.component";
+import EmailModal from "./email-modal.component";
 import moment from 'moment';
 
 
@@ -16,16 +17,23 @@ export default class CreateCalendar extends Component {
     super();
     this.state = {
       show: false,
+      email_modal_show: false,
       theDate: null,
       theEndDate: null,
       theColor: null,
+      theEventEmail: null,
+      theEventID: null,
       weekendsVisible: true,
       currentEvents: []
       
     };
     //this.showModal = this.showModal.bind(this);
-    this.hideModal = this.hideModal.bind(this);
-    this.displayEventInfo = this.displayEventInfo.bind(this);
+   this.hide_form_Modal = this.hide_form_Modal.bind(this);
+   // this.displayEventInfo = this.displayEventInfo.bind(this);
+    this.getTheEmail = this.getTheEmail.bind(this);
+    this.hide_Modal = this.hide_Modal.bind(this);
+    //this.showEmailModal = this.showEmailModal(this);
+
 
   }
  
@@ -64,7 +72,7 @@ export default class CreateCalendar extends Component {
                 selectOverlap={true}
                 
                 events= {this.state.currentEvents}
-                eventClick= {this.displayEventInfo}
+                eventClick= {this.allEmailFunction}//this.displayEventInfo}
                 selectConstraint={{start: '2021-08-04'}}
                 eventDurationEditable={false}
                 defaultAllDay= {false}
@@ -74,7 +82,8 @@ export default class CreateCalendar extends Component {
               />
           </div>
           
-              {this.state.show && <CalendarModal data={this.state}/>}
+              {this.state.show && <CalendarModal hide_form_Modal = {this.hide_form_Modal} data={this.state}/>};
+              {this.state.email_modal_show && <EmailModal hide_Modal = {this.hide_Modal} data={this.state}/>}
         </section>
     );
   }
@@ -85,8 +94,11 @@ export default class CreateCalendar extends Component {
     });
   };
 
-  hideModal = () => {
+  hide_form_Modal = () => {
     this.setState({ show: false });
+  };
+  hide_Modal = () => {
+    this.setState({ email_modal_show: false });
   };
 
   getTheDate = (selectInfo) =>{
@@ -96,7 +108,7 @@ export default class CreateCalendar extends Component {
       theColor: this.props.location.color_attribute
     });
   };
-
+/*
   displayEventInfo = (selectInfo) =>{
     alert(selectInfo.event.extendedProps._id);
     const event_id_to_be_deleted = selectInfo.event.extendedProps._id;
@@ -111,14 +123,14 @@ export default class CreateCalendar extends Component {
     else{
       alert("wrong email. Try again");
     }
-  };
+  }; */
 
   helperfunction = (selectInfo) =>{
 
-    const d = moment(selectInfo.startStr);
-    const ad = d.set({hour:23});
+    //const d = moment(selectInfo.startStr);
+    //const ad = d.set({hour:23});
     
-    alert("selected date is from" + ad.format() + "to" + selectInfo.endStr);
+    //alert("selected date is from" + ad.format() + "to" + selectInfo.endStr);
     let calendarApi = selectInfo.view.calendar;
     calendarApi.unselect(); 
   };
@@ -128,5 +140,23 @@ export default class CreateCalendar extends Component {
     this.helperfunction(selectInfo);
     this.getTheDate (selectInfo);
     this.showModal();
+  };
+
+  getTheEmail = (selectInfo)=>{
+    this.setState({
+      theEventEmail: selectInfo.event.extendedProps.studentemail, 
+      theEventID: selectInfo.event.extendedProps._id,
+    });
+  };
+  showEmailModal = () => {
+    this.setState({ 
+      email_modal_show: true 
+    });
+  };
+
+  allEmailFunction =(selectInfo) =>{
+
+    this.getTheEmail(selectInfo);
+    this.showEmailModal();
   };
 }
