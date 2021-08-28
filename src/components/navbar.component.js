@@ -15,7 +15,7 @@ export default class Navbar extends Component {
         <div className="collpase navbar-collapse" style={{display: 'flex', justifyContent: 'flex-end', paddingRight: '20px'}}>
           <ul className="navbar-nav mr-auto">
           <li className="navbar-item">
-            <Link to="/" className="nav-link">About</Link>
+            <Link to="/about" className="nav-link">About</Link>
             </li>
             
             <li className="navbar-item">
