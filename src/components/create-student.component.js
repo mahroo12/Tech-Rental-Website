@@ -6,9 +6,11 @@ export default class CreateStudent extends Component {
     constructor(props) {
     super(props);
 
-    this.onChangeStudentname = this.onChangeStudentname.bind(this);
+    this.onChangeTitle = this.onChangeTitle.bind(this);
+    this.onChangeName = this.onChangeName.bind(this);
     this.onChangeStudentid = this.onChangeStudentid.bind(this);
     this.onChangeStudentemail = this.onChangeStudentemail.bind(this);
+    this.onChangeMajor = this.onChangeMajor.bind(this);
     this.onChangecolor = this.onChangecolor.bind(this);
     this.onChangeStartdate = this.onChangeStartdate.bind(this);
     this.onChangeEnddate = this.onChangeEnddate.bind(this);
@@ -17,8 +19,10 @@ export default class CreateStudent extends Component {
 
     this.state = {
       title: '',
+      name: '',
       studentid: '',
       studentemail: '',
+      major: '',
       color: null,
       start: null,
       end: null,
@@ -30,12 +34,18 @@ export default class CreateStudent extends Component {
   }
 
 
-  onChangeStudentname(e) {
+  onChangeTitle(e) {
     this.setState({
       title: e.target.value
     });
   }
   
+  onChangeName(e) {
+    this.setState({
+      name: e.target.value
+    });
+  }
+
   onChangeStudentid(e) {
     this.setState({
         studentid: e.target.value
@@ -48,7 +58,12 @@ export default class CreateStudent extends Component {
     });
     }
 
-   
+    onChangeMajor(e) {
+      this.setState({
+        major: e.target.value
+      });
+    }
+
     onChangecolor(e) {
         this.setState({
             color: e.target.value
@@ -74,8 +89,10 @@ export default class CreateStudent extends Component {
 
     const student = {
       title: this.state.title,
+      name: this.state.name,
       studentid: this.state.studentid,
       studentemail: this.state.studentemail,
+      major: this.state.major,
       color: this.props.location.param3,
       start: this.props.location.params,
       end: this.props.location.param2
@@ -108,16 +125,28 @@ export default class CreateStudent extends Component {
               
               <div className="form-group"> 
                 
-                <label className= "full-name-label">Full Name: </label>
+                <label className= "full-name-label">Title: </label>
                 <input type="text"
                   required
                   className="form-control"
                   value={this.state.title}
-                  onChange={this.onChangeStudentname}
+                  onChange={this.onChangeTitle}
                   />
 
               </div>
               
+              <div className="form-group"> 
+                
+                <label className= "full-name-label">Name: </label>
+                <input type="text"
+                  required
+                  className="form-control"
+                  value={this.state.name}
+                  onChange={this.onChangeName}
+                  />
+
+              </div>
+
               <div className="form-group"> 
               
                 <label className= "student-id-label" >Student ID: </label>
@@ -140,32 +169,17 @@ export default class CreateStudent extends Component {
               </div>
 
               <div className="form-group"> 
-               <label className="major-label">Major: </label>
+                
+                <label className= "full-name-label">Major: </label>
                 <input type="text"
                   
                   className="form-control"
-                  value= {this.props.location.param3}
+                  value={this.state.major}
+                  onChange={this.onChangeMajor}
                   />
-              </div>
-
-
-              <div className="form-group"> 
-                
-                <label className= "start-date-label" >Start Date: </label>
-                <div className="start-date-input">
-                  <input value={this.props.location.params}/>
-                </div>
 
               </div>
-
-              <div className="form-group"> 
-                
-                <label className="end-date-label">End Date: </label>
-                <div className="end-date-input" >
-                  <input value={this.props.location.param2}/>
-                </div>
-
-              </div>
+              
             
               <div className="form-group">
               <input style={{ marginTop: '160px', marginLeft: '30px', backgroundColor: '#545B9E'}} type="submit" value="Submit" className="btn btn-primary" />

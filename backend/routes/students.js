@@ -12,16 +12,20 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) => {
     const title = req.body.title;
+    const name = req.body.name;
     const studentid = Number(req.body.studentid);
     const studentemail = req.body.studentemail;
+    const major = req.body.major;
     const color = req.body.color;
     const start= Date.parse(req.body.start);
     const end= Date.parse(req.body.end);
 
     const newStudent = new Student({
         title,
+        name,
         studentid,
         studentemail,
+        major,
         color,
         start,
         end,
