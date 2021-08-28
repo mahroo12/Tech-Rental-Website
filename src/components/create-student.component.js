@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import "./createStudent.css";
+import { Link} from "react-router-dom";
 export default class CreateStudent extends Component {
   
     constructor(props) {
@@ -114,14 +115,15 @@ export default class CreateStudent extends Component {
   render() {
     return (
         
-      <div >
+      <div style={{paddingTop: '100px'}}>
+
         <h3 className= "heading1" >Student Information form</h3>
         <hr className= "line"/>
-        
+        <form onSubmit={this.onSubmit}>
         <div className="main-pink-block" >
           
           <div className="form-block">
-            <form onSubmit={this.onSubmit}>
+            {/*<form onSubmit={this.onSubmit}>*/}
               
               <div className="form-group"> 
                 
@@ -180,21 +182,39 @@ export default class CreateStudent extends Component {
 
               </div>
               
-            
+            {/*
               <div className="form-group">
               <input style={{ marginTop: '160px', marginLeft: '30px', backgroundColor: '#545B9E'}} type="submit" value="Submit" className="btn btn-primary" />
-              </div>
+            </div>*/}
 
-            </form>
+           {/*</form>*/}
 
           </div>
 
           <div>
           <div className="another-div" >
+            <h4 style={{textAlign: 'center', paddingTop: '30px',
+                         color:'#545B9E'}}>Renting policies:</h4>
+            <div className="rules_body" style={{ paddingLeft: '30px', paddingTop: '30px', textAlign: 'left', paddingRight: '30px'}}>
+              <p style={{color: ' #0000006b'}}>Student may collect/return their computers anytime between 8 am to 5 pm on any of the weekdays from/to EUS office in McConnel Engineering Building. 
+                Students must return the computer by the due date. 
+                Failing to comply by these rules may result in penalties such as fines or being banned from renting 
+                the computers again.
+              </p>
+            </div>
+            <div className="form_buttons" style={{display: 'flex', justifyContent: 'center'}}>
+            <div>
+            <input style={{ marginTop: '160px', marginLeft: '30px', backgroundColor: '#545B9E'}} type="submit" value="Submit" className="btn btn-primary" />
+            </div>
+            <div>
+            <Link to={{pathname: "/" }} className="btn btn-primary" style={{ marginLeft: '30px',marginTop: '160px',  backgroundColor: '#545B9E', border: 'none'}}>Cancel </Link>
+              </div>
+            </div>
           </div>
           
           </div>
         </div>
+        </form>
       </div>
     )
   }
