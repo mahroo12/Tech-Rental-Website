@@ -43,38 +43,6 @@ export default class Home extends Component {
                     back to EUS office anytime during the<br/> before mentioned operating hours.</p>
               </div>
               
-            {/*
-            <div className="home">
-               <div>
-                <Link to="/schedule" className="btn btn-primary" style={{border: 'none', backgroundColor: '#566AB1', marginLeft: '80px', marginTop: '220px', paddingLeft: '20px', paddingRight: '20px', paddingTop: '13px', paddingBottom: '13px'}}> Computers</Link>
-               </div>
-               <div>
-                <Link to="#" className="btn btn-primary" style={{border: 'none', color: '#566AB1', backgroundColor: '#FFFFFF40',marginLeft: '80px', marginTop: '20px'}}>Others</Link>
-               </div>
-            </div>
-            */}
-            {/*
-            <div style={{backgroundColor: '#566AB1', display: 'flex', justifyContent: 'space-between', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
-                
-                
-                        <Link to="/" className="nav-link" style={{color: 'white'}}>vpcomm@mcgilleus.ca</Link>
-                
-                
-                <div style={{display: 'flex', justifyContent: 'flex-end', paddingRight: '20px'}}>
-                <ul className="navbar-nav mr-auto" style={{paddingRight: '20px'}}>
-                    <li >
-                        <Link to="/" className="nav-link" style={{color: 'white'}}>fb</Link>
-                    </li>
-                </ul>
-                
-                <ul className="navbar-nav mr-auto">
-                    <li >
-                        <Link to="/" className="nav-link" style={{color: 'white'}}>insta</Link>
-                    </li>
-                </ul>
-                </div>
-            </div>
-            */}
 
             <div className="main_footer">
                 <div className="footer_container">
@@ -86,7 +54,7 @@ export default class Home extends Component {
                             <h4>Contact Us</h4>
                             <ul className="navbar-nav mr-auto">
                                 <li>vpcomm@mcgilleus.ca</li>
-                                <li>vpcomm@mcgilleus.ca</li>
+                                <li>techrental@mcgilleus.ca</li>
                             </ul>
 
 
@@ -94,8 +62,9 @@ export default class Home extends Component {
                         <div className="footer_column">
                             <h4>Connect With Us</h4>
                             <ul className="navbar-nav mr-auto">
-                                <li>Facebook</li>
-                                <li>Instagram</li>
+                                <Link to={{ pathname: "https://www.facebook.com/mcgilleus/" }} target="_blank" style={{ textDecoration: 'none', color: 'white' }} >Facebook</Link>
+                            
+                                <Link to={{ pathname: "https://www.instagram.com/mcgilleus/?hl=en" }} target="_blank" style={{ textDecoration: 'none', color: 'white' }} >Instagram</Link>
                             </ul>
 
 
@@ -103,8 +72,8 @@ export default class Home extends Component {
                         <div className="footer_column">
                             <h4>About Us</h4>
                             <ul className="navbar-nav mr-auto">
-                                <li>About EUS</li>
-                                <li>About Tech Rentals</li>
+                            <Link to={{ pathname: "https://eus.wiki/Launchpad" }} target="_blank" style={{ textDecoration: 'none', color: 'white' }} >About EUS</Link>
+                                <Link to={{ pathname: "/about" }} target="_blank" style={{ textDecoration: 'none', color: 'white' }} >About Tech Rentals</Link>
                             </ul>
 
 
