@@ -8,9 +8,14 @@ import CreateSchedule from "./components/create-schedule.component";
 import CreateCalendar from './components/create-calendar.component';
 import CreateAbout from './components/create-about.component';
 import Home from './components/home-page.component';
+import Login from './components/create-login.component';
+import Test from './components/create-test.component';
+import { useState } from 'react';
 
 
 function App() {
+
+  const [ user, setLoginUser] = useState({})
   return (
     
     <Router>
@@ -25,6 +30,12 @@ function App() {
         <Route path = "/schedule" component= {CreateSchedule}/>
         <Route path = "/calendar" component= {CreateCalendar}/>
         <Route path = "/about" component= {CreateAbout}/>
+        <Route path = "/login"><Login setLoginUser={setLoginUser}/></Route> 
+        <Route exact path="/test">
+            {
+              user && user._id ? <Test setLoginUser={setLoginUser} /> : <Login setLoginUser={setLoginUser}/>
+            }
+          </Route>
       
       </body>
     </Router>

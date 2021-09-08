@@ -2,6 +2,7 @@ const router = require('express').Router();
 let Student = require('../models/student.model');
 //adding
 const nodemailer = require("nodemailer");
+require('dotenv').config(); 
 
 router.route('/').get((req, res) => {
     Student.find()
@@ -32,12 +33,12 @@ router.route('/add').post((req, res) => {
     });
 //objects
     let transporter = nodemailer.createTransport({
-        host: "smtp.ethereal.email",
-        port: 587,
-        secure: false, // true for 465, false for other ports
+        host: "smtp.gmail.com",//"smtp.ethereal.email",
+        port: 465,//587,
+        secure: true,//false, // true for 465, false for other ports
         auth: {
-        user: 'destini.howell80@ethereal.email', // generated ethereal user
-        pass: 'hu8NmD9bjqY44UNc4p', // generated ethereal password
+        user: process.env.MAIL_USERNAME,//'destini.howell80@ethereal.email', // generated ethereal user
+        pass: process.env.MAIL_PASS, // generated ethereal password
      },
      tls:{
         rejectUnauthorized:false
@@ -45,7 +46,7 @@ router.route('/add').post((req, res) => {
     });
 
     let info =  transporter.sendMail({
-        from: 'destini.howell80@ethereal.email', // sender address
+        from: process.env.MAIL_USERNAME,// 'destini.howell80@ethereal.email', // sender address
         to: studentemail, // list of receivers
         subject: "confirmation email", // Subject line
         text: "Hello world?", // plain text body

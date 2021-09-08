@@ -23,7 +23,7 @@ export default class Navbar extends Component {
             
             
             <li className="navbar-item">
-            <Link to="/" className="nav-link">Admin Portal</Link>
+            <Link to="/login" className="nav-link">Admin Portal</Link>
             </li>
           </ul>
         </div>
