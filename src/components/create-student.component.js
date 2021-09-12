@@ -27,6 +27,7 @@ export default class CreateStudent extends Component {
       color: null,
       start: null,
       end: null,
+      emailError: "",
       
       
 
@@ -55,9 +56,9 @@ export default class CreateStudent extends Component {
   
   onChangeStudentemail(e) {
     this.setState({
-        studentemail: e.target.value
+      studentemail: e.target.value
     });
-    }
+  }
 
     onChangeMajor(e) {
       this.setState({
@@ -83,35 +84,54 @@ export default class CreateStudent extends Component {
                 });
      }            
 
+     validate = () =>{
+       let emailError = "";
+
+       if (!this.state.studentemail.includes('@mail.mcgill.ca')){
+         emailError = 'Invalid email';
+       }
+
+       if (emailError){
+         this.setState({emailError});
+         return false;
+       }
+
+       return true;
+     };
 
   onSubmit(e) {
     e.preventDefault();
   
+    const isValid = this.validate();
 
-    const student = {
-      title: this.state.title,
-      name: this.state.name,
-      studentid: this.state.studentid,
-      studentemail: this.state.studentemail,
-      major: this.state.major,
-      color: this.props.location.param3,
-      start: this.props.location.params,
-      end: this.props.location.param2
-    }
+    if (isValid){
+        
+      const student = {
+          title: this.state.title,
+          name: this.state.name,
+          studentid: this.state.studentid,
+          studentemail: this.state.studentemail,
+          major: this.state.major,
+          color: this.props.location.param3,
+          start: this.props.location.params,
+          end: this.props.location.param2
+        }
 
 
-    console.log(student);
-    
+      console.log(student);
+        
 
 
-    axios.post('http://localhost:5000/students/add', student)
-      .then(res => console.log(res.data));
-    
-    window.location.href = "/";
+      axios.post('http://localhost:5000/students/add', student)
+        .then(res => console.log(res.data));
+        
+      window.location.href = "/";
+      }
+
       
-
   }
 
+  
   render() {
     return (
         
@@ -168,6 +188,8 @@ export default class CreateStudent extends Component {
                   value={this.state.studentemail}
                   onChange={this.onChangeStudentemail}
                   />
+                  <div style={{marginLeft: '34px', fontSize:15, color: 'red'}}>
+                    {this.state.emailError}</div>
               </div>
 
               <div className="form-group"> 
