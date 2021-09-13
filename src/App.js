@@ -9,7 +9,7 @@ import CreateCalendar from './components/create-calendar.component';
 import CreateAbout from './components/create-about.component';
 import Home from './components/home-page.component';
 import Login from './components/create-login.component';
-import Test from './components/create-test.component';
+import StudentList from './components/mongodb-table-info.component';
 import { useState } from 'react';
 
 
@@ -31,9 +31,9 @@ function App() {
         <Route path = "/calendar" component= {CreateCalendar}/>
         <Route path = "/about" component= {CreateAbout}/>
         <Route path = "/login"><Login setLoginUser={setLoginUser}/></Route> 
-        <Route exact path="/test">
+        <Route exact path="/mongodbtable">
             {
-              user && user._id ? <Test setLoginUser={setLoginUser} /> : <Login setLoginUser={setLoginUser}/>
+              user && user._id ? <StudentList /> : <Login setLoginUser={setLoginUser}/>
             }
           </Route>
       
