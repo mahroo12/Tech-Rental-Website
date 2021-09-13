@@ -53,6 +53,7 @@ export default class CreateCalendar extends Component {
     return (
       
         <section style={{ backgroundColor: 	'#FFFFFF', paddingTop: '100px'}}>
+          <p style={{paddingLeft: '25px'}}>Please, do not refresh at any point of booking otherwise information will be lost.</p>
           <div className="cl" style={{padding: '20px', position: 'relative', zIndex: 0}}>
               {console.log('the value is')}
               {console.log(this.state.currentEvents)} 

@@ -48,9 +48,9 @@ router.route('/add').post((req, res) => {
     let info =  transporter.sendMail({
         from: process.env.MAIL_USERNAME,// 'destini.howell80@ethereal.email', // sender address
         to: studentemail, // list of receivers
-        subject: "confirmation email", // Subject line
+        subject: "Laptop booking confirmation email", // Subject line
         text: "Hello world?", // plain text body
-        html: "<b>whats up</b>", // html body
+        html: "<div><p>Hello,</p> <p>This email is to confirm that you have successfully booked your laptop. You may collect your laptop anytime between 8 am to 5 pm on any of the weekdays from EUS office in McConnel Engineering Building. You will be asked to show your vaccine passports when picking up laptops.</p><p>Best,</br>Mahroo Rahman</br>Tech Rental Manager</br>Engineering Undergraduate Society of McGill University</br>Cell: (438) 725-8697 | Office: (514) 398-4396 </br>techrental@mcgilleus.ca | wiki.mcgilleus.ca</p></div>", // html body
       });
       
     console.log("Message sent: %s", info.messageId);

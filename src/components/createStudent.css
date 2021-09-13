@@ -74,8 +74,14 @@
 
 .another-div{
     background-color:#FAFAFF;
-    height: 300px; 
+    height: 400px; 
     width:450px;
     margin-right: 30px;
     border-radius: 5px;
+}
+
+#inputID::placeholder {
+    color:#0000006b;
+    opacity: 0.5;
+   
 }

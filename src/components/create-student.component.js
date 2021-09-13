@@ -28,6 +28,7 @@ export default class CreateStudent extends Component {
       start: null,
       end: null,
       emailError: "",
+      colorError: "",
       
       
 
@@ -99,12 +100,29 @@ export default class CreateStudent extends Component {
        return true;
      };
 
+     validateColor = () =>{
+      let colorError = "";
+      
+
+      if (!(this.props.location.param3)){
+        colorError = 'You were unsuccessful in booking either because information has been lost at any point because you refreshed or other technical issues. We recommend you Cancel and try again from the beginning.';
+      }
+
+      if (colorError){
+        this.setState({colorError});
+        return false;
+      }
+
+      return true;
+    };
+
   onSubmit(e) {
     e.preventDefault();
   
     const isValid = this.validate();
+    const isValidColor = this.validateColor();
 
-    if (isValid){
+    if (isValid && isValidColor){
         
       const student = {
           title: this.state.title,
@@ -139,6 +157,7 @@ export default class CreateStudent extends Component {
 
         <h3 className= "heading1" >Student Information form</h3>
         <hr className= "line"/>
+        
         <form onSubmit={this.onSubmit}>
         <div className="main-pink-block" >
           
@@ -151,6 +170,8 @@ export default class CreateStudent extends Component {
                 <input type="text"
                   required
                   className="form-control"
+                  id="inputID"
+                  placeholder= "ID2687"
                   value={this.state.title}
                   onChange={this.onChangeTitle}
                   />
@@ -164,6 +185,8 @@ export default class CreateStudent extends Component {
                   required
                   className="form-control"
                   value={this.state.name}
+                  id="inputID"
+                  placeholder = "John Doe"
                   onChange={this.onChangeName}
                   />
 
@@ -175,7 +198,9 @@ export default class CreateStudent extends Component {
                 <input type="text"
                   required
                   className="form-control"
+                  id="inputID"
                   value={this.state.studentid}
+                  placeholder = "123456789"
                   onChange={this.onChangeStudentid}
                   />
               </div>
@@ -185,6 +210,8 @@ export default class CreateStudent extends Component {
                 <input type="text"
                   required
                   className="form-control"
+                  id="inputID"
+                  placeholder= "john.doe@mail.mcgill.ca"
                   value={this.state.studentemail}
                   onChange={this.onChangeStudentemail}
                   />
@@ -194,10 +221,12 @@ export default class CreateStudent extends Component {
 
               <div className="form-group"> 
                 
-                <label className= "full-name-label">Major: </label>
+                <label className= "full-name-label">Major (Optional): </label>
                 <input type="text"
                   
                   className="form-control"
+                  id="inputID"
+                  placeholder= "Software Engineering"
                   value={this.state.major}
                   onChange={this.onChangeMajor}
                   />
@@ -223,13 +252,15 @@ export default class CreateStudent extends Component {
                 Failing to comply by these rules may result in penalties such as fines or being banned from renting 
                 the computers again.
               </p>
+              <p style={{color: ' #0000006b'}}>Students will be asked to show their vaccine passports when picking up laptops.</p>
             </div>
+            
             <div className="form_buttons" style={{display: 'flex', justifyContent: 'center'}}>
             <div>
-            <input style={{ marginTop: '160px', marginLeft: '30px', backgroundColor: '#545B9E'}} type="submit" value="Submit" className="btn btn-primary" />
+            <input style={{ marginTop: '120px', marginLeft: '30px', backgroundColor: '#545B9E'}} type="submit" value="Submit" className="btn btn-primary" />
             </div>
             <div>
-            <Link to={{pathname: "/" }} className="btn btn-primary" style={{ marginLeft: '30px',marginTop: '160px',  backgroundColor: '#545B9E', border: 'none'}}>Cancel </Link>
+            <Link to={{pathname: "/" }} className="btn btn-primary" style={{ marginLeft: '30px',marginTop: '120px',  backgroundColor: '#545B9E', border: 'none'}}>Cancel </Link>
               </div>
             </div>
           </div>
@@ -237,6 +268,8 @@ export default class CreateStudent extends Component {
           </div>
         </div>
         </form>
+        <div style={{marginLeft: '34px', fontSize:15, color: 'red', paddingBottom: '15px'}}>
+        {this.state.colorError}</div>
       </div>
     )
   }
